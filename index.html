@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy</title>
+
+</head>
+<style>
+    .content {
+        display: flex;
+        width: 300px;
+        height: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<script>
+    const module = {
+        exports: {}
+    };
+</script>
+<script src="index.js"></script>
+<script>
+    window.onload = function() {
+        let btn = document.createElement('button');;
+        btn.textContent = 'Copy 🦄';
+        btn.style.fontSize = '40px';
+        document.body.append(btn);
+        btn.addEventListener('click', () => {
+            copy("#input1")
+        })
+    }
+</script>
+
+<body>
+    <div class="content">
+        <p id="input1">Copy 🦄</p><br>
+        <button id="button1">拷贝</button>
+    </div>
+</body>
+
+</html>
