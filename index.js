@@ -1,5 +1,3 @@
-const 
-
 function copy(input, regex) {
     if (input.indexOf('#') != -1) {
         let dom = document.querySelector(input)
@@ -23,15 +21,24 @@ function beginToCopy(text, regex) {
     element.value = regexText || text
     element.setAttribute('readonly', '')
     element.style.opacity = 0
-    document.body.append(element)
+    document.body.appendChild(element)
     element.select()
+    let clickbody = document.body.addEventListener('click', () => {
+        if (clickbody) {
+            document.body.removeEventListener('click', () => {
+
+            })
+        }
+        document.body.removeChild(element)
+        element = null
+    }) || true
     let result = document.execCommand('copy')
     return result
 }
 
 function copyInputAndTextarea(dom) {
     dom.select()
-    let result=document.execCommand('copy')
+    let result = document.execCommand('copy')
     return result
 }
 module.export = copy
