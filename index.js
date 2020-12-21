@@ -1,27 +1,37 @@
+const 
+
 function copy(input, regex) {
     if (input.indexOf('#') != -1) {
         let dom = document.querySelector(input)
         let text = dom.innerHTML
-
         if (dom.tagName !== 'INPUT' && dom.tagName !== 'TEXTAREA') {
-            beginToCopy(text, regex)
+            return beginToCopy(text, regex)
         } else {
-            dom.select()
-            document.execCommand('copy')
+            return copyInputAndTextarea(dom)
         }
     } else {
-        beginToCopy(input, regex)
+        return beginToCopy(input, regex)
     }
 }
 
 function beginToCopy(text, regex) {
+    let regexText = undefined
     let element = document.createElement('textarea')
-    regexText = text.search(regex)
-    element.value = regexText
+    if (regex) {
+        regexText = text.search(regex)
+    }
+    element.value = regexText || text
     element.setAttribute('readonly', '')
     element.style.opacity = 0
     document.body.append(element)
     element.select()
-    document.execCommand('copy')
+    let result = document.execCommand('copy')
+    return result
+}
+
+function copyInputAndTextarea(dom) {
+    dom.select()
+    let result=document.execCommand('copy')
+    return result
 }
 module.export = copy

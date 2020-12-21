@@ -10,5 +10,8 @@
     "copy"
   ],
   "author": "silentcm",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "copy-text-to-clipboard": "^2.2.0"
+  }
 }
