@@ -1,0 +1,1 @@
+const copy =require('./index.js')

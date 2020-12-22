@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>copy</title>
-
+    <script src="./public/cutcopy.js">
+    </script>
 </head>
 <style>
     .content {
@@ -16,27 +17,30 @@
         align-items: center;
     }
 </style>
-<script>
+<!-- <script>
     const module = {
         exports: {}
     };
-</script>
-<script src="index.js"></script>
-<script>
+</script> -->
+
+<script type="text/javascript">
     window.onload = function() {
-        let btn = document.createElement('button');;
-        btn.textContent = 'Copy 🦄';
+        let btn = document.createElement('button');
+        let btn1 = document.getElementById('button1');
+        btn.textContent = 'Copy'; 
         btn.style.fontSize = '40px';
-        document.body.append(btn);
-        btn.addEventListener('click', () => {
-            console.log(copy("#input1"));
+        // document.body.append(btn);
+
+        btn1.addEventListener('click', function() {
+
+            console.log(copy('#input1'));
         })
     }
 </script>
 
 <body>
     <div class="content">
-        <p id="input1">Copy 🦄</p><br>
+        <p id="input1" value="">Copy 🦄</p><br>
         <button id="button1">拷贝</button>
     </div>
 </body>
