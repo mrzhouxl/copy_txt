@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build-debug && npm run build-min",
+    "build": "npm run build-debug",
     "build-debug": "webpack",
     "build-min": "cross-env NODE_ENV=production webpack",
-    "watch":"webpack --watch"
+    "watch": "webpack --watch"
   },
   "keywords": [
     "copy"
@@ -19,11 +19,10 @@
     "copy-text-to-clipboard": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0"
   }

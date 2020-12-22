@@ -1,7 +1,6 @@
 'use strict';
 
 const copy=(input = '', regex, { target = document.body } = {}) =>{
-    console.log(111);
     if (input.indexOf('#') != -1) {
         let dom = document.querySelector(input)
         let text = dom.innerHTML
@@ -26,8 +25,9 @@ function selectCopy(text, regex, target) {
     element.style.opacity = 0
     element.style.left = '-9999px';
     element.style.fontSize = '12pt';
-    document.body.appendChild(element)
+    target.appendChild(element)
     element.select()
+    console.log(111)
     let clickbody = target.addEventListener('click', () => {
         if (clickbody) {
             return

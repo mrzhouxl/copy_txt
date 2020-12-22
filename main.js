@@ -1,1 +1,6 @@
-const copy =require('./index.js')
+class person{
+    constructor(){
+        
+    }
+}
+console.log(new person)
