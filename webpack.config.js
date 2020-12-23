@@ -1,14 +1,13 @@
 const webpack = require('webpack')
-
-module.exports = {
+const config={
     mode: 'production',
     entry: './main.js',
     output: {
         path: __dirname + '/public',
         filename: 'cutcopy.js',
-        // libraryTarget: "umd",
-        // globalObject: "this",
-        // library: "cutcopy"
+        libraryTarget: "umd",
+        globalObject: "this",
+        library: "copy"
     },
     module: {
         rules: [{
@@ -18,3 +17,4 @@ module.exports = {
         }]
     },
 }
+module.exports = config
