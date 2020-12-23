@@ -1,5 +1,3 @@
-'use strict';
-
 const copy=(input = '', regex, { target = document.body } = {}) =>{
     if (input.indexOf('#') != -1) {
         let dom = document.querySelector(input);

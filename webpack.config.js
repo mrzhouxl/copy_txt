@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const config={
     mode: 'production',
-    entry: './main.js',
+    entry: './index.js',
     output: {
         path: __dirname + '/public',
         filename: 'cutcopy.js',
