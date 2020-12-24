@@ -1,4 +1,4 @@
-const copy=(input = '', regex, { target = document.body } = {}) =>{
+const copy = (input = '', regex, { target = document.body } = {}) => {
     if (input.indexOf('#') != -1) {
         let dom = document.querySelector(input);
         let text = dom.innerHTML;
@@ -16,7 +16,7 @@ function selectCopy(text, regex, target) {
     let regexText = undefined;
     let element = document.createElement('textarea');
     if (regex) {
-        regexText = text.search(regex);
+        regexText = text.match(regex);
     }
     element.value = regexText || text;
     element.setAttribute('readonly', '');
@@ -25,27 +25,30 @@ function selectCopy(text, regex, target) {
     element.style.fontSize = '12pt';
     target.appendChild(element);
     element.select();
-    console.log(111);
-    let clickbody = target.addEventListener('click', () => {
+    const event = () => {
         if (clickbody) {
-            return;
-        } else {
+            target.removeEventListener('click', () => event)
+        }
+        if (element) {
             target.removeChild(element);
             element = null;
         }
+    }
+    let clickbody = target.addEventListener('click', () => {
+        event()
     }) || true;
     try {
         let result = document.execCommand('copy');
-        return result;;
+        return result;
 
-    } catch (_) {}
+    } catch (_) { }
 }
 
 function copyInputAndTextarea(dom) {
     dom.select();
     let result = document.execCommand('copy');
     return result;
-} 
+}
 
 
 module.exports = copy;

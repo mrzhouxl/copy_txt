@@ -4,10 +4,11 @@ const config={
     entry: './index.js',
     output: {
         path: __dirname + '/public',
-        filename: 'cutcopy.js',
+        filename: 'copy.js',
         libraryTarget: "umd",
         globalObject: "this",
         library: "copy"
+
     },
     module: {
         rules: [{
