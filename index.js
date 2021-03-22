@@ -15,6 +15,7 @@ const copy = (input = '', regex, { target = document.body } = {}) => {
 function selectCopy(text, regex, target) {
     let regexText = undefined;
     let element = document.createElement('textarea');
+    let preFocElement =document.activeElement;
     if (regex) {
         regexText = text.match(regex);
     }
@@ -39,6 +40,9 @@ function selectCopy(text, regex, target) {
     }) || true;
     try {
         let result = document.execCommand('copy');
+        if(preFocElement){
+            preFocElement.focus();
+        }
         return result;
 
     } catch (_) { }

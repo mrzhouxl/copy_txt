@@ -4,7 +4,7 @@ const config={
     entry: './index.js',
     output: {
         path: __dirname + '/public',
-        filename: 'copy.js',
+        filename: 'index.js',
         libraryTarget: "umd",
         globalObject: "this",
         library: "copy"
