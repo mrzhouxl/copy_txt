@@ -1,5 +1,5 @@
 const copy = (input = '', regex, { target = document.body } = {}) => {
-    if (input.indexOf('#') != -1) {
+    if (input.indexOf('#') != -1&&input.indexOf('#')==0) {
         let dom = document.querySelector(input);
         let text = dom.innerHTML;
         if (dom.tagName !== 'INPUT' && dom.tagName !== 'TEXTAREA') {
